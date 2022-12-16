@@ -29,7 +29,11 @@
 			
 			.notie-container {
       			box-shadow: none;
-    		}	
+    		}
+
+			.datepicker{
+				z-index: 10000;
+			}		
 		</style>
     </head>
 
@@ -84,10 +88,10 @@
 								<div class="col">
 								<div class="form-row" id="reservation-dates">
 									<div class="col">
-									<input required class="form-control" type="text" name="start" placeholder="Arrival">
+									<input disable required class="form-control" type="text" name="start" placeholder="Arrival">
 									</div>
 									<div class="col">
-									<input required class="form-control" type="text" name="end" placeholder="Departure">
+									<input disable required class="form-control" type="text" name="end" placeholder="Departure">
 									</div>  
 								</div>
 								</div>
@@ -169,7 +173,7 @@
 					</div>				
 				</form>
 				`
-				attention.custom({msg:html});
+				attention.custom({msg:html, title:"Choose your dates"});
 			})
 
 			const elem = document.getElementById('reservation-dates');
@@ -261,12 +265,19 @@
 						backdrop: false,
 						showCancelButton:true,	
 						focusConfirm: false,
+						willOpen: () => {
+							const elem = document.getElementById('reservation-dates-modal');
+							const rp = new DateRangePicker(elem,{
+								format:'yyyy-mm-dd',
+								showOnFocus:true,
+							})
+						},
 						preConfirm: () => {
 							return [
 							document.getElementById('start').value,
 							document.getElementById('end').value
 							]
-						}
+													}
 						})
 
 						if (formValues) {
