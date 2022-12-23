@@ -17,9 +17,12 @@ const portNumber = ":8080"
 var app config.Appconfig
 var session *scs.SessionManager
 
+// main is the main function
 func main() {
-	//chage this to true when in production
+	// change this to true when in production
 	app.InProduction = false
+
+	// set up the session
 	session = scs.New()
 	session.Lifetime = 24 * time.Hour
 	session.Cookie.Persist = true
@@ -34,20 +37,22 @@ func main() {
 	}
 
 	app.Templatecache = tc
-	app.UseCache = true
+	app.UseCache = false
+
 	repo := handlers.NewRepo(&app)
 	handlers.NewHandlers(repo)
+
 	render.NewTemplates(&app)
 
-	fmt.Printf("Starting application on port %s", portNumber)
+	fmt.Println(fmt.Sprintf("Staring application on port %s", portNumber))
 
 	srv := &http.Server{
 		Addr:    portNumber,
 		Handler: routes(&app),
 	}
-	err = srv.ListenAndServe()
 
+	err = srv.ListenAndServe()
 	if err != nil {
-		log.Fatal("err")
+		log.Fatal(err)
 	}
 }
