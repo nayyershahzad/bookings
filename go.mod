@@ -1,4 +1,4 @@
-module github.com/nayyershahzad/go-course
+module github.com/nayyershahzad/bookings
 
 go 1.13
 
