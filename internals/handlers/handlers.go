@@ -7,6 +7,7 @@ import (
 	"net/http"
 
 	"github.com/nayyershahzad/bookings/internals/config"
+	"github.com/nayyershahzad/bookings/internals/forms"
 	"github.com/nayyershahzad/bookings/internals/models"
 	"github.com/nayyershahzad/bookings/internals/render"
 )
@@ -56,7 +57,14 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 
 // Reservation renders the make a reservation page and displays form
 func (m *Repository) Reservation(w http.ResponseWriter, r *http.Request) {
-	render.RenderTemplate(w, "make-reservation.page.tmpl", r, &models.TemplateData{})
+	render.RenderTemplate(w, "make-reservation.page.tmpl", r, &models.TemplateData{
+		Form: forms.New(nil),
+	})
+}
+
+// PostReservation handles the posting of a reservation form
+func (m *Repository) PostReservation(w http.ResponseWriter, r *http.Request) {
+
 }
 
 // Generals renders the room page
