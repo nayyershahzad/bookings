@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 
 	"github.com/justinas/nosurf"
-	"github.com/nayyershahzad/go-course/pkg/config"
-	"github.com/nayyershahzad/go-course/pkg/models"
+	"github.com/nayyershahzad/bookings/internals/config"
+	"github.com/nayyershahzad/bookings/internals/models"
 )
 
 var app *config.Appconfig

@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/alexedwards/scs/v2"
-	"github.com/nayyershahzad/go-course/pkg/config"
-	"github.com/nayyershahzad/go-course/pkg/handlers"
-	"github.com/nayyershahzad/go-course/render"
+	"github.com/nayyershahzad/bookings/internals/config"
+	"github.com/nayyershahzad/bookings/internals/handlers"
+	"github.com/nayyershahzad/bookings/internals/render"
 )
 
 const portNumber = ":8080"
