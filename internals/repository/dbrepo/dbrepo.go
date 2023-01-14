@@ -8,11 +8,11 @@ import (
 )
 
 type postgresDbRepo struct {
-	App *config.Appconfig
+	App *config.AppConfig
 	DB  *sql.DB
 }
 
-func NewPostgresRepo(conn *sql.DB, a *config.Appconfig) repository.DatabaseRepo {
+func NewPostgresRepo(conn *sql.DB, a *config.AppConfig) repository.DatabaseRepo {
 	return &postgresDbRepo{
 		App: a,
 		DB:  conn,

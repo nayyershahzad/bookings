@@ -10,7 +10,7 @@ import (
 	"github.com/nayyershahzad/bookings/internals/handlers"
 )
 
-func routes(app *config.Appconfig) http.Handler {
+func routes(app *config.AppConfig) http.Handler {
 
 	mux := chi.NewRouter()
 

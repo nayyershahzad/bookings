@@ -20,7 +20,7 @@ import (
 
 const portNumber = ":8080"
 
-var app config.Appconfig
+var app config.AppConfig
 var session *scs.SessionManager
 var infoLog *log.Logger
 var errorLog *log.Logger
@@ -70,7 +70,7 @@ func run() (*driver.DB, error) {
 
 	// connect to database
 	log.Println("Connecting to database...")
-	db, err := driver.ConnectSQL("host=localhost port=5432 dbname=bookings user=tcs password=")
+	db, err := driver.ConnectSQL("host=localhost port=5432 dbname=bookings user=postgres password=apachee")
 	if err != nil {
 		log.Fatal("Cannot connect to database! Dying...")
 	}

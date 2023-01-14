@@ -8,10 +8,10 @@ import (
 	"github.com/nayyershahzad/bookings/internals/config"
 )
 
-var app *config.Appconfig
+var app *config.AppConfig
 
 // NewHelpers sets up app config for helpers
-func NewHelpers(a *config.Appconfig) {
+func NewHelpers(a *config.AppConfig) {
 	app = a
 }
 

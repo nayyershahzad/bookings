@@ -12,10 +12,10 @@ import (
 	"github.com/nayyershahzad/bookings/internals/models"
 )
 
-var app *config.Appconfig
+var app *config.AppConfig
 
 // NewTemplates set the config for the template package
-func NewTemplates(a *config.Appconfig) {
+func NewTemplates(a *config.AppConfig) {
 	app = a
 }
 
@@ -30,7 +30,7 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, r *http.Request, td *mod
 	var tc map[string]*template.Template
 
 	if app.UseCache {
-		tc = app.Templatecache
+		tc = app.TemplateCache
 	} else {
 		tc, _ = CreateTemplateCache()
 	}

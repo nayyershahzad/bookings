@@ -20,12 +20,12 @@ var Repo *Repository
 
 // Repository is the repository type
 type Repository struct {
-	App *config.Appconfig
+	App *config.AppConfig
 	DB  repository.DatabaseRepo
 }
 
 // NewRepo creates a new repository
-func NewRepo(a *config.Appconfig, db *driver.DB) *Repository {
+func NewRepo(a *config.AppConfig, db *driver.DB) *Repository {
 	return &Repository{
 		App: a,
 		DB:  dbrepo.NewPostgresRepo(db.SQL, a),
