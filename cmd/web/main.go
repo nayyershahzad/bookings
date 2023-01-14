@@ -12,9 +12,9 @@ import (
 	"github.com/nayyershahzad/bookings/internals/config"
 	"github.com/nayyershahzad/bookings/internals/driver"
 	"github.com/nayyershahzad/bookings/internals/handlers"
+	"github.com/nayyershahzad/bookings/internals/helpers"
 	"github.com/nayyershahzad/bookings/internals/models"
 	"github.com/nayyershahzad/bookings/internals/render"
-	"github.com/tsawler/bookings-app/internal/helpers"
 )
 
 const portNumber = ":8080"
