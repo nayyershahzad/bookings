@@ -15,11 +15,12 @@ import (
 	"github.com/nayyershahzad/bookings/internals/helpers"
 	"github.com/nayyershahzad/bookings/internals/models"
 	"github.com/nayyershahzad/bookings/internals/render"
+	//"github.com/nayyershahzad/bookings/internals/repository"
 )
 
 const portNumber = ":8080"
 
-var app config.AppConfig
+var app config.Appconfig
 var session *scs.SessionManager
 var infoLog *log.Logger
 var errorLog *log.Logger
