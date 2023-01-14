@@ -5,13 +5,13 @@ import (
 	"net/http"
 	"runtime/debug"
 
-	"github.com/nayyer/bookings/internals/config"
+	"github.com/nayyershahzad/bookings/internals/config"
 )
 
-var app *config.AppConfig
+var app *config.Appconfig
 
 // NewHelpers sets up app config for helpers
-func NewHelpers(a *config.AppConfig) {
+func NewHelpers(a *config.Appconfig) {
 	app = a
 }
 
