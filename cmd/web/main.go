@@ -35,6 +35,10 @@ func main() {
 
 	app.Session = session
 
+	//connect to database
+	log.Println("connecting to database...")
+
+	//db, err := driver.ConnectSQL("host=localhost port=5432 dbname=bookings user=postgres password=apachee")
 	tc, err := render.CreateTemplateCache()
 	if err != nil {
 		log.Fatal("cannot create template cache")
